@@ -7,6 +7,8 @@ fi
 
 arreglo=("${@:1}")
 
+
+
 existe() {
 
   if [ $# -ne 1 ]; then
@@ -24,6 +26,8 @@ existe() {
   done 
   return $resultado
 }
+
+
 
 replace() {
 
@@ -51,7 +55,7 @@ eliminar() {
     return 2
   fi
 
-  if ! existe $1 ; then # <- si existe
+  if [ ! existe $1 ] ; then # <- si existe
     for ((i=0; i<${#arreglo[@]}; i++)) ; do
       if [ "$arreglo[$i]" == "$1" ]; then
         unset arreglo[$i]
@@ -75,7 +79,7 @@ todos() {
 }
 
 todos 
-replace 1 puto
+replace taci puto
 todos
 
 
