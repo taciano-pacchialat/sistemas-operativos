@@ -6,7 +6,8 @@ usuarios=($(ls /home))
 
 for usuario in "${usuarios[@]}"; do
   directorio=/home/${usuario}/mailDir
-  if [ -e "$directorio" ] && [ -d "$directorio" ]; then
+  shell=$(grep $usuario /etc/passwd | cut -d ':' -f 7)
+  if [ -e "$directorio" ] && [ -d "$directorio" ] && [ "$shell" == "/bin/bash" ]; then
     echo "$usuario" >> "$listado"
   fi
 done
