@@ -28,20 +28,19 @@ eliminar_usuario() {
     return 2
   fi
 
-  if ! existe "$1" ; then # <- si no existe
+  if existe "$1" ; then # <- si no existe
+    echo "$1 no existe"
+    return 2
+  else
     for ((i=0; i<${#arreglo[@]}; i++)); do
       if [ "$1" == "${arreglo[$i]}" ]; then
         unset arreglo[$i]
-        arreglo=($(compact ${arreglo[@]}))
+        arreglo=(${arreglo[@]})
         echo "$1 eliminado"
         break
       fi
     done
-  else  
-    echo "$1 no existe"
-    return 2
   fi
-
 }
 
 usuarios_con_patron() {
