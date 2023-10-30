@@ -2,11 +2,12 @@
 - tamaño de celda = 1 byte
 - marcos desde la direccion fisica 0
 
-|Pagina|Marco|
-|0 |3 |
-|1 |5 |
-|2 |2 |
-|3 |6 |
+| Pagina | Marco |
+| ------ | ----- |
+| 0      | 3     |
+| 1      | 5     |
+| 2      | 2     |
+| 3      | 6     |
 
 | **Marco** | **Pagina** | **Direccion Virtual** | **Direccion Fisica** |
 | --------- | ---------- | --------------------- | -------------------- |
