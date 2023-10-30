@@ -1,0 +1,19 @@
+- tamaño de pagina = 512 bytes
+- tamaño de celda = 1 byte
+- marcos desde la direccion fisica 0
+
+|Pagina|Marco|
+|0 |3 |
+|1 |5 |
+|2 |2 |
+|3 |6 |
+
+|Memoria Principal|
+|**Marco**|**Pagina**|**Direccion Virtual**|**Direccion Fisica**|
+| 0 | - | - | 0 .. 511 |
+| 1 | - | - | 512 .. 1023 |
+| 2 | 2 | 1024 .. 1535 | 1024 .. 1535 |
+| 3 | 0 | 0 .. 511 | 1536 .. 2047 |
+| 4 | - | - | 2048 .. 2559 |
+| 5 | 1 | 512 .. 1023 | 2560 .. 3071 |
+| 6 | 3 | 1536 .. 2047 | 3072 .. 3583 |
